@@ -1,0 +1,14 @@
+{
+  "development": {
+    "username": "tu usuario",
+    "password": "tu contraseña",
+    "database": "nombre de la base de datos",
+    "host": "host",
+    "dialect": "mysql",
+    "jwt_secret" : "tu secretito"
+  },
+  "test": {
+  },
+  "production": {
+  }
+}

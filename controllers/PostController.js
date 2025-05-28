@@ -4,6 +4,7 @@ const { Op } = Sequelize
 const PostController = {
     async create(req, res) {
         try {
+            req.body.UserId = req.user.id //el UserId va a ser el del usuario logueadeo
             const post = await Post.create(req.body)
             res.status(201).send({ msg: "Post creado con éxito", post })
         } catch (error) {
