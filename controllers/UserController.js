@@ -9,7 +9,7 @@ const { jwt_secret } = require("../config/config.json")["development"]
 //index.User
 
 const UserController = {
-    async create(req, res) {
+    async create(req, res, next) {
         try {
             //req.body.role = "user"
             //const user = await User.create(req.body)
@@ -18,7 +18,8 @@ const UserController = {
             res.status(201).send({ msg: 'Usuario creado con éxito', user })
         } catch (error) {
             console.log(error)
-            res.status(500).send(error)
+            next(error)
+            // res.status(500).send(error) //sustituido por next(error)
         }
     },
     async login(req, res) {
