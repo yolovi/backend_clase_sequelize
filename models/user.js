@@ -15,30 +15,31 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    name:  {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          notNull: {
-            msg: "Por favor introduce tu nombre",
-          },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "Por favor introduce tu nombre",
         },
       },
-    email:{
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          notNull: {
-            msg: "Por favor introduce tu correo",
-          },
-          isEmail: {
-            msg: "Por favor introduce un correo valido",
-          },
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "Por favor introduce tu correo",
+        },
+        isEmail: {
+          msg: "Por favor introduce un correo valido",
         },
       },
+    },
     password: DataTypes.STRING,
+    confirmed: DataTypes.BOOLEAN,
     role: DataTypes.STRING,
-    birth: DataTypes.DATE
+    birth: DataTypes.DATE,
   }, {
     sequelize,
     modelName: 'User',

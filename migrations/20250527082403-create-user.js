@@ -24,6 +24,9 @@ module.exports = {
       birth: {
         type: Sequelize.DATE
       },
+      confirmed: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
